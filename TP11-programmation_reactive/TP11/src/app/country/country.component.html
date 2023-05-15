@@ -1,0 +1,10 @@
+<p>Input avec recherche de pays en Angular 13</p>
+
+<div class="search">
+    <label class="countryLabel" for="country"> Pays </label>
+    <input id="country" type="text" #input (blur)="onBlur()" (focus)="onFocus()" />
+    <ul class="dropDownList" *ngIf="currentCountries.length > 0">
+        <li
+            *ngFor="let country of currentCountries" (click)="selectCountry($event)"> {{ country.libelle }}</li>
+    </ul>
+</div>
